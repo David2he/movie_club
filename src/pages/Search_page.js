@@ -4,9 +4,23 @@ import { search_movie } from "../services/Search_Api"
 import Search from "../components/Search"
 
 export default function Search_page() {
+	const [datas, set_datas] = useState([])
+	const [take_text, set_take_text] = useState("")
+
+	useEffect(() => {
+		search_movie().then((data) => {
+			set_datas(data)
+		})
+	}, [])
+
+	const handleSearchText = (text) => {
+		set_take_text(text)
+	}
+	console.log(datas)
+	console.log(take_text)
 	return (
 		<View>
-			<Search style={styles.main_container} />
+			<Search handleSearch={handleSearchText} style={styles.main_container} />
 		</View>
 	)
 }
