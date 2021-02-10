@@ -34,8 +34,7 @@ export default function Search_page() {
 				<Image
 					style={styles.logo}
 					source={{
-						url: `https://image.tmdb.org/t/p/original/1Lhc32P0a62BgMFgd20wXR1osR3.jpg`,
-						// url: `https://image.tmdb.org/t/p/original/${item.backdrop_path}`,
+						uri: `https://image.tmdb.org/t/p/original/${item.poster_path}`,
 					}}
 				/>
 			</View>
@@ -66,7 +65,8 @@ const styles = StyleSheet.create({
 	},
 	cards: {
 		width: "100%",
-		height: 40,
+		height: 100,
+		margin: 40,
 		textAlign: "center",
 		backgroundColor: "red",
 	},
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
 		color: "black",
 	},
 	logo: {
-		width: 66,
-		height: 58,
+		width: 50,
+		height: 50,
 	},
 })
