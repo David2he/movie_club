@@ -9,6 +9,7 @@ import {
 } from "react-native"
 import { search_movie } from "../services/Search_Api"
 import Search from "../components/Search"
+import Render_item_flatList from "../components/Render_item_flatList"
 
 export default function Search_page() {
 	const [datas, set_datas] = useState([])
@@ -27,21 +28,10 @@ export default function Search_page() {
 
 	let renderItem = (item) => {
 		console.log(item)
-		return (
-			<View style={styles.cards}>
-				<Text style={styles.textCards}>{item.original_title}</Text>
-				<Text style={styles.textCards}>{item.release_date}</Text>
-				<Image
-					style={styles.logo}
-					source={{
-						uri: `https://image.tmdb.org/t/p/original/${item.poster_path}`,
-					}}
-				/>
-			</View>
-		)
+		return <Render_item_flatList test={item} />
 	}
 
-	// console.log(datas)
+	console.log(datas)
 	// console.log(take_text)
 	return (
 		<View>
