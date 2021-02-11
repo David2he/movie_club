@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react"
 import { StyleSheet, Text, View, TextInput, Button } from "react-native"
 import { search_movie } from "../services/Search_Api"
 
-export default function Search_page() {
+export default function Search_page(props) {
 	const [take_text, set_take_text] = useState("")
 
 	const onChangeText = (text) => {
 		set_take_text(text)
+		props.handleSearch(text)
 	}
-	console.log(take_text)
 	return (
 		<View style={styles.main_container}>
 			<View style={styles.input_container}>

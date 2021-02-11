@@ -3,27 +3,32 @@ import { Text, StyleSheet, View } from "react-native"
 import { find_genres } from "../services/Search_Api"
 
 export default class List_genre extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			datas: [],
-		}
-	}
-
-	setData = () => {
-		searchMovie().then((data) => {
-			this.setState({ datas: data })
-			console.log(this.state.datas)
-		})
-	}
-
+	
 	render() {
 		return (
-			<View>
-				<Text> textInComponent </Text>
+			<View style={styles.main_container}>
+				<Text style={styles.text}>{find_genres}</Text>
 			</View>
 		)
 	}
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+	main_container: {
+		width: "100%",
+		padding: 30,
+		backgroundColor: "#fd4556",
+		borderBottomLeftRadius: 15,
+		borderBottomRightRadius: 15,
+	},
+
+	text: {
+		flex: 1,
+		justifyContent: "center",
+		alignItems: "center",
+
+		backgroundColor: "white",
+
+		margin: "1% 2%",
+	},
+})

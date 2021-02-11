@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import {
 	StyleSheet,
 	Text,
@@ -6,25 +6,22 @@ import {
 	SafeAreaView,
 	FlatList,
 	Image,
+	Button,
 } from "react-native"
-import { SearchMovie } from "../services/Search_Api"
-import Search from "../components/Search"
+import { find_genres_movies } from "../services/Search_Api"
 import Render_item_flatList from "../components/Render_item_flatList"
 
-export default function SearchPage() {
+export default function Search_page() {
 	const [datas, set_datas] = useState([])
-	const [take_text, set_take_text] = useState("")
+	// const [take_text, set_take_text] = useState("")
+	const set_genre_search = "&with_grenres="
+	const genres = `${set_genre_search}Fantastique`
 
-	const test = () => {
-		SearchMovie(take_text).then((data) => {
+	useEffect(() => {
+		find_genres_movies(genres, 4).then((data) => {
 			set_datas(data)
 		})
-	}
-
-	const handleSearchText = (text) => {
-		set_take_text(text)
-		test()
-	}
+	}, [])
 
 	let renderItem = (item) => {
 		console.log(item)
@@ -35,7 +32,6 @@ export default function SearchPage() {
 	// console.log(take_text)
 	return (
 		<View>
-			<Search handleSearch={handleSearchText} style={styles.main_container} />
 			<SafeAreaView>
 				<FlatList
 					data={datas.results}
@@ -43,6 +39,7 @@ export default function SearchPage() {
 					keyExtractor={(item) => item.id.toString()}
 				/>
 			</SafeAreaView>
+			<Button onPress={() => test()}></Button>
 		</View>
 	)
 }
