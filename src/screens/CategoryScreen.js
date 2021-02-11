@@ -7,6 +7,7 @@ import {
 	Button,
 	SafeAreaView,
 	FlatList,
+	ScrollView,
 } from "react-native"
 import RenderItemFlatList from "../components/Render_item_flatList"
 import { Ionicons } from "@expo/vector-icons"
@@ -18,20 +19,20 @@ export const CategoryScreen = (props) => {
 	const genres = `${setGenreSearch}Action`
 
 	useEffect(() => {
-		findGenresMovies(genres, 1).then((data) => {
+		findGenresMovies(genres, 2).then((data) => {
 			setDatas(data)
+			// console.log(data)
 		})
 	}, [])
 
 	const renderItem = (item) => {
-		console.log(item)
 		return <RenderItemFlatList test={item} />
 	}
 
 	return (
 		<View style={styles.main_container}>
 			<Text style={styles.category_title}>Aventure</Text>
-			<SafeAreaView>
+			<SafeAreaView style={styles.test}>
 				<FlatList
 					data={datas.results}
 					renderItem={({ item }) => renderItem(item)}
@@ -54,5 +55,11 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 		color: "#B5A90F",
 		fontSize: 24,
+	},
+	test: {
+		flex: 1,
+		alignItems: "spaceBetween",
+		width: "100%",
+		marginTop: 20,
 	},
 })
