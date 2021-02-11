@@ -1,6 +1,6 @@
 import { getApiUrl } from "./Api_configure"
 
-export function search_movie(searchText, page) {
+export function SearchMovie(searchText, page) {
 	return fetch(
 		getApiUrl(`/search/movie`, {
 			query: searchText,

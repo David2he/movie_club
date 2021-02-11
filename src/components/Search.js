@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { StyleSheet, Text, View, TextInput, Button } from "react-native"
-import { search_movie } from "../services/Search_Api"
+import { SearchPage } from "../services/Search_Api"
 
-export default function Search_page(props) {
+export default function SearchPage(props) {
 	const [take_text, set_take_text] = useState("")
 
 	const onChangeText = (text) => {
