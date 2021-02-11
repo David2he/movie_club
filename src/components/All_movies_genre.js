@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import {
 	StyleSheet,
 	Text,
@@ -17,11 +17,11 @@ export default function Search_page() {
 	const set_genre_search = "&with_grenres="
 	const genres = `${set_genre_search}Fantastique`
 
-	const test = () => {
+	useEffect(() => {
 		find_genres_movies(genres, 4).then((data) => {
 			set_datas(data)
 		})
-	}
+	}, [])
 
 	let renderItem = (item) => {
 		console.log(item)
