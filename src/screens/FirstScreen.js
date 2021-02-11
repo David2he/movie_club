@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, StyleSheet } from "react-native";
-import LogoImage from '../src/components/LogoImage';
+import LogoImage from '../components/LogoImage';
+import FlatList from "../components/FlatList";
+
 
 export const LaunchScreen = (props) => {
     const {navigation} = props;
@@ -12,6 +14,8 @@ export const LaunchScreen = (props) => {
     return (
         <View style={styles.main_container}>
             <LogoImage/>
+			<FlatList/>
+			{/* <Search_page style={styles.main_container} /> */}
         </View>
 
     )
@@ -20,8 +24,6 @@ export const LaunchScreen = (props) => {
 const styles = StyleSheet.create({
     main_container: {
         flex: 1,
-        marginTop: 20,
-        paddingHorizontal: 50,
         justifyContent: 'flex-start',
         alignItems: 'center',
     }

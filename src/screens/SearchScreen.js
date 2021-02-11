@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native"
 import { search_movie } from "../services/Search_Api"
 import Search from "../components/Search"
 
-export default function Search_page() {
+export default function SearchScreen() {
 	return (
 		<View>
 			<Search style={styles.main_container} />

@@ -10,7 +10,7 @@ export function search_movie(searchText, page) {
 	).then((result) => result.json())
 }
 
-export function find_genres() {
+export function FindCategory() {
 	return fetch(
 		getApiUrl(`/genre/movie/list`, {
 			language: "fr-FR",

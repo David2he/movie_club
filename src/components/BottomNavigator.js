@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { LaunchScreen } from '../../screens/FirstScreen';
-import { CategoryScreen } from '../../screens/CategoryScreen';
+import { LaunchScreen } from '../screens/FirstScreen';
+import { CategoryScreen } from '../screens/CategoryScreen';
 import { Ionicons } from '@expo/vector-icons';
 
 

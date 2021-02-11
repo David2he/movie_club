@@ -7,7 +7,7 @@ import {
 	FlatList,
 	SafeAreaView,
 } from "react-native"
-import { find_genres } from "../services/Search_Api"
+import { FindCategory, find_genres } from "../services/Search_Api"
 
 export default class List_genre extends Component {
 	constructor(props) {
@@ -18,7 +18,7 @@ export default class List_genre extends Component {
 	}
 
 	renderItem = (item) => {
-		console.log("pute")
+		console.log("hello")
 		return (
 			<View style={styles.test}>
 				<Text>{item.name}</Text>
@@ -27,7 +27,7 @@ export default class List_genre extends Component {
 	}
 
 	setDataGenres = () => {
-		find_genres().then((data) => {
+		FindCategory().then((data) => {
 			this.setState({ datas: data })
 			// console.log(this.state.datas.genres)
 			this.testFlatList()

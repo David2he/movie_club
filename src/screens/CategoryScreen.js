@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
 
 export const CategoryScreen = (props) => {
     return (
@@ -19,6 +20,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        textAlign: 'center',
         color: '#B5A90F',
         fontSize: 24,
     }
