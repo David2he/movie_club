@@ -17,11 +17,19 @@ export default function Main_page() {
 			setDatas(data)
 		})
 	}, [])
+	const test = (test) => {
+		console.log(test)
+	}
 
 	let renderItem = (item) => {
 		return (
 			<View style={styles.cards}>
-				<TouchableOpacity style={styles.button}>
+				<TouchableOpacity
+					style={styles.button}
+					onPress={() => {
+						test(item.name)
+					}}
+				>
 					<Text style={styles.textCards}>{item.name}</Text>
 				</TouchableOpacity>
 			</View>
