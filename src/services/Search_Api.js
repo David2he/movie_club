@@ -27,11 +27,3 @@ export function findGenresMovies(searchText, page) {
 		})
 	).then((result) => result.json())
 }
-
-export function detailledMovies(searchText) {
-	return fetch(
-		getApiUrl(`/movie/${searchText}`, {
-			language: "fr-FR",
-		})
-	).then((result) => result.json())
-}
