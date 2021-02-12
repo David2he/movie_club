@@ -48,6 +48,7 @@ export default function Detailled_movie() {
 	console.log(timeConverted)
 	return (
 		<View>
+			<View></View>
 			<Text>{timeConverted}</Text>
 		</View>
 	)

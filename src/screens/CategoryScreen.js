@@ -15,8 +15,8 @@ import { findGenresMovies } from "../services/Search_Api"
 
 export const CategoryScreen = (props) => {
 	const [datas, setDatas] = useState([])
-	const setGenreSearch = "&with_grenres="
-	const genres = `${setGenreSearch}Action`
+	// const setGenreSearch = "&with_grenres="
+	const genres = "Action"
 
 	useEffect(() => {
 		findGenresMovies(genres, 2).then((data) => {
