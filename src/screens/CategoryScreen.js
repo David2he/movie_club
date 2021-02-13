@@ -18,7 +18,7 @@ export const CategoryScreen = (props) => {
 	const test = (test) => {
 		console.log(test)
 	}
-	
+
 	return (
 		<View style={styles.main_container}>
 			<View style={styles.title_container}>
