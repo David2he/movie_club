@@ -11,7 +11,7 @@ import { SearchMovie } from "../services/Search_Api"
 import Search from "../components/Search"
 import Render_item_flatList from "../components/Render_item_flatList"
 
-export default function SearchPage() {
+export default function SearchScreen() {
 	const [datas, set_datas] = useState([])
 	const [take_text, set_take_text] = useState("")
 
@@ -51,14 +51,14 @@ const styles = StyleSheet.create({
 	main_container: {
 		width: 100,
 		height: 50,
-		backgroundColor: "red",
+		backgroundColor: "#B00020",
 	},
 	cards: {
 		width: "100%",
 		height: 100,
 		margin: 40,
 		textAlign: "center",
-		backgroundColor: "red",
+		backgroundColor: "#B00020",
 	},
 	textCards: {
 		color: "black",

@@ -3,6 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { LaunchScreen } from "../screens/FirstScreen"
 import { CategoryScreen } from "../screens/CategoryScreen"
 import { Ionicons } from "@expo/vector-icons"
+import CategoryNavigator from "./CategoryNavigator"
+import SearchScreen from "../screens/SearchScreen"
 
 const Tab = createBottomTabNavigator()
 
@@ -19,7 +21,7 @@ export default function BottomNavigator() {
 		>
 			<Tab.Screen
 				name="Home"
-				component={LaunchScreen}
+				component={CategoryNavigator}
 				options={{
 					tabBarIcon: ({ focused }) => (
 						<Ionicons
@@ -32,7 +34,7 @@ export default function BottomNavigator() {
 			/>
 			<Tab.Screen
 				name="Search"
-				component={CategoryScreen}
+				component={SearchScreen}
 				options={{
 					tabBarIcon: ({ focused }) => (
 						<Ionicons

@@ -14,7 +14,7 @@ export const LaunchScreen = (props) => {
     return (
         <View style={styles.main_container}>
             <LogoImage/>
-			<FlatList/>
+			<FlatList onPressItem={(item) => navigation.navigate('MoviesListScreen', {name: item.name, id: item.id})}/>
 			{/* <Search_page style={styles.main_container} /> */}
         </View>
     )

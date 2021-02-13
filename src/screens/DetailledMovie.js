@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { StyleSheet, Text, View } from "react-native"
-import { detailledMovies, FindCategory } from "../services/Search_Api"
+import { MovieDetails, FindCategory } from "../services/Search_Api"
 
 export default function Detailled_movie() {
 	const [dataFilm, setDataFilm] = useState([])
@@ -19,7 +19,7 @@ export default function Detailled_movie() {
 	let backgroundImage = ""
 	let imageMovie = ""
 	useEffect(() => {
-		detailledMovies(14).then((data) => {
+		MovieDetails(14).then((data) => {
 			setDataFilm(data)
 		}),
 			FindCategory().then((data) => {

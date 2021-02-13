@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { StyleSheet, Text, View, TextInput, Button } from "react-native"
-import { SearchPage } from "../services/Search_Api"
+import { SearchMovie } from "../services/Search_Api"
 
 export default function SearchPage(props) {
 	const [take_text, set_take_text] = useState("")
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
 	main_container: {
 		width: "100%",
 		padding: 30,
-		backgroundColor: "#fd4556",
+		backgroundColor: "#B00020",
 		borderBottomLeftRadius: 15,
 		borderBottomRightRadius: 15,
 	},

@@ -9,7 +9,7 @@ import {
 } from "react-native"
 import { FindCategory } from "../services/Search_Api"
 
-export default function Main_page() {
+export default function Main_page(props) {
 	const [datas, setDatas] = useState([])
 
 	useEffect(() => {
@@ -26,9 +26,7 @@ export default function Main_page() {
 			<View style={styles.cards}>
 				<TouchableOpacity
 					style={styles.button}
-					onPress={() => {
-						test(item.name)
-					}}
+					onPress={() => props.onPressItem(item)}
 				>
 					<Text style={styles.textCards}>{item.name}</Text>
 				</TouchableOpacity>
