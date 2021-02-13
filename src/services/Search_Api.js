@@ -19,15 +19,14 @@ export function FindCategory() {
 }
 
 export function findGenreMovies(genre, page) {
-    return fetch(
-        getApiUrl('/discover/movie', {
-            with_genres: genre,
-            language: "fr-FR",
-            page: page,
-        })
-    ).then((result) => result.json())
+	return fetch(
+		getApiUrl("/discover/movie", {
+			with_genres: genre,
+			language: "fr-FR",
+			page: page,
+		})
+	).then((result) => result.json())
 }
-
 export function detailledMovies(searchText) {
 	return fetch(
 		getApiUrl(`/movie/${searchText}`, {
