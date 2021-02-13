@@ -22,7 +22,7 @@ export default function SearchScreen() {
 	}
 
 	let renderItem = (item) => {
-		return <Render_item_flatList test={item} />
+		return <Render_item_flatList datas={item} />
 	}
 
 	return (

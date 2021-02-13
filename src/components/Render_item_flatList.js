@@ -10,6 +10,7 @@ import {
 
 export default function RenderItemFlatList(props) {
 	const { datas } = props
+	console.log(datas)
 
 	return (
 		<SafeAreaView style={styles.cards}>
