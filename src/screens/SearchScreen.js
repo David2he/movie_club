@@ -15,24 +15,16 @@ export default function SearchScreen() {
 	const [datas, set_datas] = useState([])
 	const [take_text, set_take_text] = useState("")
 
-	const test = () => {
-		SearchMovie(take_text).then((data) => {
+	const handleSearchText = (text) => {
+		SearchMovie(text).then((data) => {
 			set_datas(data)
 		})
 	}
 
-	const handleSearchText = (text) => {
-		set_take_text(text)
-		test()
-	}
-
 	let renderItem = (item) => {
-		console.log(item)
 		return <Render_item_flatList test={item} />
 	}
 
-	console.log(datas)
-	// console.log(take_text)
 	return (
 		<View>
 			<Search handleSearch={handleSearchText} style={styles.main_container} />

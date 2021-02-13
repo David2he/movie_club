@@ -31,7 +31,6 @@ export default function Detailled_movie() {
 	for (initForInGenre in allGenres) {
 		if (the_genre == allGenres[initForInGenre].name) {
 			returnTheGenre = allGenres[initForInGenre].name
-			console.log(returnTheGenre)
 		}
 	}
 

@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from "react"
-import { StyleSheet, Text, View, Image, SafeAreaView, FlatList } from "react-native"
+import {
+	StyleSheet,
+	Text,
+	View,
+	Image,
+	SafeAreaView,
+	FlatList,
+} from "react-native"
 
 export default function RenderItemFlatList(props) {
-	const { title } = props
-	console.log(test)
-	
+	const { datas } = props
+
 	return (
 		<SafeAreaView style={styles.cards}>
-			<FlatList
-					data={datas.results}
-					renderItem={({ item }) => renderItem(item)}
-					keyExtractor={(item) => item.id.toString()}
-				/>
-			<Text style={styles.textCards}>{title.original_title}</Text>
-			<Text style={styles.textCards}>{title.release_date}</Text>
-			<Text style={styles.textCards}>{title.vote_average}</Text>
+			<Text style={styles.textCards}>{datas.original_title}</Text>
+			<Text style={styles.textCards}>{datas.release_date}</Text>
+			<Text style={styles.textCards}>{datas.vote_average}</Text>
 			<Image
 				style={styles.logo}
 				source={{
-					uri: `https://image.tmdb.org/t/p/original/${test.poster_path}`,
+					uri: `https://image.tmdb.org/t/p/original/${datas.poster_path}`,
 				}}
 			/>
 		</SafeAreaView>
