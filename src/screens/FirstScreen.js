@@ -17,7 +17,6 @@ export const LaunchScreen = (props) => {
 			<FlatList/>
 			{/* <Search_page style={styles.main_container} /> */}
         </View>
-
     )
 }
 

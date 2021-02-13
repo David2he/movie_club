@@ -1,20 +1,27 @@
-import React from "react"
-import { StyleSheet, Text, View, Image } from "react-native"
+import React, { useState, useEffect } from "react"
+import { StyleSheet, Text, View, Image, SafeAreaView, FlatList } from "react-native"
 
-export default function Render_item_flatList(props) {
-	const { test } = props
+export default function RenderItemFlatList(props) {
+	const { title } = props
+	console.log(test)
+	
 	return (
-		<View style={styles.cards}>
-			<Text style={styles.textCards}>{test.original_title}</Text>
-			<Text style={styles.textCards}>{test.release_date}</Text>
-			<Text style={styles.textCards}>{test.vote_average}</Text>
+		<SafeAreaView style={styles.cards}>
+			<FlatList
+					data={datas.results}
+					renderItem={({ item }) => renderItem(item)}
+					keyExtractor={(item) => item.id.toString()}
+				/>
+			<Text style={styles.textCards}>{title.original_title}</Text>
+			<Text style={styles.textCards}>{title.release_date}</Text>
+			<Text style={styles.textCards}>{title.vote_average}</Text>
 			<Image
 				style={styles.logo}
 				source={{
 					uri: `https://image.tmdb.org/t/p/original/${test.poster_path}`,
 				}}
 			/>
-		</View>
+		</SafeAreaView>
 	)
 }
 
@@ -22,14 +29,23 @@ const styles = StyleSheet.create({
 	main_container: {
 		width: 100,
 		height: 50,
-		backgroundColor: "red",
+		backgroundColor: "#B00020",
 	},
 	cards: {
-		width: "100%",
-		height: 100,
-		margin: 40,
+		width: "40%",
+		marginTop: 24,
+		marginHorizontal: "5%",
+		paddingVertical: 20,
 		textAlign: "center",
-		backgroundColor: "red",
+		backgroundColor: "#fff",
+		shadowColor: "#B00020",
+		shadowOffset: {
+			width: 0,
+			height: 4,
+		},
+		shadowOpacity: 0.7,
+		shadowRadius: 4,
+		elevation: 3,
 	},
 	textCards: {
 		color: "black",
