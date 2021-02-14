@@ -9,7 +9,7 @@ import {
 } from "react-native"
 import { SearchMovie } from "../services/Search_Api"
 import Search from "../components/Search"
-import Render_item_flatList from "../components/Render_item_flatList"
+import ListItemSearch from "../components/ListItemSearch"
 
 export default function SearchScreen() {
 	const [datas, set_datas] = useState([])
@@ -22,12 +22,12 @@ export default function SearchScreen() {
 	}
 
 	let renderItem = (item) => {
-		return <Render_item_flatList datas={item} />
+		return <ListItemSearch datas={item} />
 	}
 
 	return (
 		<View>
-			<Search handleSearch={handleSearchText} style={styles.main_container} />
+			<Search handleSearch={handleSearchText}/>
 			<SafeAreaView>
 				<FlatList
 					data={datas.results}
@@ -38,25 +38,3 @@ export default function SearchScreen() {
 		</View>
 	)
 }
-
-const styles = StyleSheet.create({
-	main_container: {
-		width: 100,
-		height: 50,
-		backgroundColor: "#B00020",
-	},
-	cards: {
-		width: "100%",
-		height: 100,
-		margin: 40,
-		textAlign: "center",
-		backgroundColor: "#B00020",
-	},
-	textCards: {
-		color: "black",
-	},
-	logo: {
-		width: 50,
-		height: 50,
-	},
-})
