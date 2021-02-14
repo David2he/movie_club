@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from "react"
-import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from "react-native"
+import React from "react"
+import {
+	StyleSheet,
+	Text,
+	View,
+	TextInput,
+	Button,
+	TouchableOpacity,
+} from "react-native"
 import { SearchMovie } from "../services/Search_Api"
 import LogoImage from "./LogoImage"
 
 export default function SearchPage(props) {
-	const [take_text, set_take_text] = useState("")
-
 	const onChangeText = (text) => {
-		set_take_text(text)
 		props.handleSearch(text)
 	}
 	return (
 		<View style={styles.main_container}>
 			<View>
-				<LogoImage/>
+				<LogoImage />
 			</View>
 			<View style={styles.search_container}>
 				<TextInput
@@ -57,19 +61,19 @@ const styles = StyleSheet.create({
 		height: 36,
 		left: "25%",
 		backgroundColor: "#B5A90F",
-        color: 'black',
-        padding: 8,
-        paddingHorizontal: 16,
-        borderRadius: 4,
-        shadowColor: 'rgba(0, 0, 0, 0.1)',
-        shadowOpacity: 0.8,
-        elevation: 6,
-        shadowRadius: 15 ,
-        shadowOffset : { width: 1, height: 13},
+		color: "black",
+		padding: 8,
+		paddingHorizontal: 16,
+		borderRadius: 4,
+		shadowColor: "rgba(0, 0, 0, 0.1)",
+		shadowOpacity: 0.8,
+		elevation: 6,
+		shadowRadius: 15,
+		shadowOffset: { width: 1, height: 13 },
 	},
 	button_text: {
-		textAlign: 'center',
-        textTransform: 'uppercase',
-        color: 'white',
-	}
+		textAlign: "center",
+		textTransform: "uppercase",
+		color: "white",
+	},
 })

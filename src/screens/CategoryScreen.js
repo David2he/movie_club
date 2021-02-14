@@ -5,10 +5,15 @@ import { findGenreMovies } from "../services/Search_Api"
 
 export const CategoryScreen = (props) => {
 	const [datas, setDatas] = useState([])
-	const {navigation, route} = props;
+	const { navigation, route } = props
 
 	useLayoutEffect(() => {
-		navigation.setOptions({ title: route && route.params && route.params.name? route.params.name: 'Category'})
+		navigation.setOptions({
+			title:
+				route && route.params && route.params.name
+					? route.params.name
+					: "Category",
+		})
 	})
 	useEffect(() => {
 		findGenreMovies(route.params.id, 1).then((data) => {
@@ -19,11 +24,21 @@ export const CategoryScreen = (props) => {
 
 	return (
 		<SafeAreaView style={styles.main_container}>
-			<FlatList 
+			<FlatList
 				style={styles.flatlist_container}
 				data={datas}
-				renderItem={({item}) => <ListItem movie={item} onPress={(id) => console.log(id)}/>}
-				keyExtractor={item => item.id.toString()}
+				renderItem={({ item }) => (
+					<ListItem
+						datas={item}
+						details={() =>
+							navigation.navigate("DetailledMovie", {
+								id: item.id,
+								genre: item.genre_ids[0],
+							})
+						}
+					/>
+				)}
+				keyExtractor={(item) => item.id.toString()}
 			/>
 		</SafeAreaView>
 	)

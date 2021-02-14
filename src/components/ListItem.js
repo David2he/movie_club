@@ -1,68 +1,60 @@
-import React from 'react'
-import { Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
+import React from "react"
+import { Text, TouchableOpacity, StyleSheet, Image, View } from "react-native"
 
 export default function ListItem(props) {
-    const {movie, onPress} = props
-    
-    return (
-        <TouchableOpacity
-            style={styles.cards}
-            onPress={() => onPress(movie.id)}
-		>
-            <Image
-				style={styles.logo}
+	const { datas, details } = props
+
+	return (
+		<TouchableOpacity style={styles.cards} onPress={details}>
+			<Image
+				style={styles.imageMovie}
 				source={{
-					uri: `https://image.tmdb.org/t/p/original/${movie.poster_path}`,
+					uri: `https://image.tmdb.org/t/p/original/${datas.poster_path}`,
 				}}
 			/>
-			<Text style={styles.titleCards}>{movie.original_title}</Text>
-			<Text style={styles.dateCards}>{movie.release_date}</Text>
-			<Text style={styles.voteCards}>{movie.vote_average}</Text>
+			<View style={styles.containerTextCards}>
+				<Text style={styles.titleCards}>{datas.original_title}</Text>
+				<Text style={styles.textCards}>{datas.release_date}</Text>
+				<Text style={styles.voteCards}>{datas.vote_average}</Text>
+			</View>
 		</TouchableOpacity>
-    )
+	)
 }
 
 const styles = StyleSheet.create({
 	cards: {
-        flex: 1,
-        justifyContent: "center",
-        flexWrap: "wrap",
-        width: "90%",
-        paddingVertical: 36,
-		marginTop: 24,
-		marginHorizontal: "5%",
-		backgroundColor: "#fff",
+		position: "relative",
+		height: 130,
+		justifyContent: "center",
+		margin: 15,
 		shadowColor: "#B00020",
 		shadowOffset: {
 			width: 0,
-			height: 4,
+			height: 3,
 		},
 		shadowOpacity: 0.7,
-		shadowRadius: 4,
-		elevation: 3,
-    },
-    titleCards: {
-        marginLeft: 120,
-        paddingVertical: 4,
-        color: "#B5A90F",
-        fontWeight: "bold",
+		shadowRadius: 4.0,
+		elevation: 5,
 	},
-	dateCards: {
-        marginLeft: 120,
-        paddingVertical: 4,
-        color: "#B5A90F",
-    },
-    voteCards: {
-        position: "absolute",
-        marginLeft: 300,
-        color: "#B00020",
-        fontWeight: "bold",
-        fontSize: 16,
-    },
-	logo: {
-        position: "absolute",
-        left: 0,
-		width: 100,
+	imageMovie: {
+		position: "absolute",
 		height: "100%",
+		width: 80,
+	},
+	containerTextCards: {
+		marginLeft: 100,
+	},
+	titleCards: {
+		fontSize: 15,
+		color: "#B5A90F",
+		fontWeight: "bold",
+		marginBottom: 10,
+	},
+	voteCards: {
+		position: "absolute",
+		top: 15,
+		right: 15,
+		fontWeight: "bold",
+		color: "#B00020",
 	},
 })
